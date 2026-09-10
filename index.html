@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Untuk Kamu 🎀</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= DEKORASI GLOBAL (bintang, sparkle, dsb) ================= -->
+  <div class="floating-decor" id="floatingDecor" aria-hidden="true"></div>
+
+  <!-- ================= TOMBOL MUSIK ================= -->
+  <button id="musicToggle" class="music-toggle" aria-label="Nyalakan/matikan musik" title="Musik">
+    <span class="music-icon">♪</span>
+  </button>
+
+  <audio id="bgMusic" loop preload="none">
+    <source src="beabadoobee - Glue Song.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- ================= SCENE 1: OPENING ================= -->
+  <section class="scene active" id="scene-opening">
+    <div class="scene-decor" aria-hidden="true">
+      <span class="deco heart">♡</span>
+      <span class="deco star">✦</span>
+      <span class="deco sparkle">✧</span>
+      <span class="deco petal">❀</span>
+      <span class="deco star star2">✦</span>
+      <span class="deco heart heart2">♡</span>
+    </div>
+    <div class="scene-content">
+      <p class="eyebrow-text">psst...</p>
+      <h1 class="opening-text" id="openingText">Hei, ada seseorang yang<br>ulang tahun hari ini...</h1>
+      <button class="btn btn-primary reveal-btn" id="startBtn">Mulai <span class="btn-deco">🎀</span></button>
+    </div>
+  </section>
+
+  <!-- ================= SCENE 2: AMPLOP SURAT ================= -->
+  <section class="scene" id="scene-envelope">
+    <div class="scene-content">
+      <p class="scene-hint" id="envelopeHint">Ketuk amplopnya ✨</p>
+
+      <div class="envelope-wrap" id="envelopeWrap">
+        <div class="envelope" id="envelope">
+          <div class="envelope-back"></div>
+          <div class="letter" id="letter">
+            <div class="letter-inner">
+              <p class="letter-text">Hari ini bukan hari biasa.</p>
+              <p class="letter-text">Karena hari ini adalah hari dimana<br>seseorang yang spesial lahir ke dunia bagi kedua orang tua.</p>
+              <button class="btn btn-secondary letter-btn" id="continueFromLetter">Lanjutkan →</button>
+            </div>
+          </div>
+          <div class="envelope-flap"></div>
+          <div class="envelope-seal">🎀</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SCENE 3: MAKE A WISH ================= -->
+  <section class="scene" id="scene-wish">
+    <div class="scene-content">
+      <div class="cake-preview" aria-hidden="true">🎂</div>
+      <p class="wish-text" id="wishText1">Sebelum lanjut...</p>
+      <p class="wish-text wish-text-2" id="wishText2">Buat permohonan dulu ya ✨</p>
+      <button class="btn btn-primary" id="wishReadyBtn">Aku sudah siap</button>
+    </div>
+  </section>
+
+  <!-- ================= SCENE 4: TIUP LILIN ================= -->
+  <section class="scene" id="scene-candles">
+    <div class="scene-content">
+      <p class="scene-hint" id="candleHint">Sekarang tiup lilinnya! 🕯️</p>
+      <p class="scene-subhint" id="cutSubhint">Di pencet yak api nya bukan di tiup beneran😁</p>
+
+
+      <div class="cake-blow-wrap">
+        <svg class="cake-svg" id="cakeSvg" viewBox="0 0 320 260" xmlns="http://www.w3.org/2000/svg">
+          <!-- lilin -->
+          <g class="candle" data-candle="1">
+            <rect class="candle-stick" x="95" y="60" width="10" height="34" rx="3"/>
+            <g class="flame-group">
+              <ellipse class="flame" cx="100" cy="52" rx="7" ry="12"/>
+              <ellipse class="flame-inner" cx="100" cy="55" rx="3.5" ry="6"/>
+            </g>
+            <g class="smoke" aria-hidden="true">
+              <path d="M100 50 Q95 40 100 32 Q105 24 100 15" />
+            </g>
+          </g>
+          <g class="candle" data-candle="2">
+            <rect class="candle-stick" x="155" y="50" width="10" height="44" rx="3"/>
+            <g class="flame-group">
+              <ellipse class="flame" cx="160" cy="42" rx="7" ry="12"/>
+              <ellipse class="flame-inner" cx="160" cy="45" rx="3.5" ry="6"/>
+            </g>
+            <g class="smoke" aria-hidden="true">
+              <path d="M160 40 Q155 30 160 22 Q165 14 160 5" />
+            </g>
+          </g>
+          <g class="candle" data-candle="3">
+            <rect class="candle-stick" x="215" y="60" width="10" height="34" rx="3"/>
+            <g class="flame-group">
+              <ellipse class="flame" cx="220" cy="52" rx="7" ry="12"/>
+              <ellipse class="flame-inner" cx="220" cy="55" rx="3.5" ry="6"/>
+            </g>
+            <g class="smoke" aria-hidden="true">
+              <path d="M220 50 Q215 40 220 32 Q225 24 220 15" />
+            </g>
+          </g>
+
+          <!-- kue -->
+          <g class="cake-body">
+            <rect x="60" y="94" width="200" height="50" rx="10" fill="#ffd9e6"/>
+            <rect x="60" y="94" width="200" height="14" rx="7" fill="#fff0f6"/>
+            <rect x="45" y="144" width="230" height="70" rx="14" fill="#ffb6d0"/>
+            <rect x="45" y="144" width="230" height="16" rx="8" fill="#ffdcea"/>
+            <rect x="30" y="214" width="260" height="34" rx="14" fill="#ff9dc0"/>
+            <circle cx="80" cy="120" r="5" fill="#fff0f6"/>
+            <circle cx="130" cy="170" r="5" fill="#fff0f6"/>
+            <circle cx="190" cy="120" r="5" fill="#fff0f6"/>
+            <circle cx="230" cy="180" r="5" fill="#fff0f6"/>
+            <circle cx="160" cy="190" r="5" fill="#fff0f6"/>
+          </g>
+        </svg>
+      </div>
+
+      <p class="wish-made-text" id="wishMadeText">Yay! Permohonanmu sudah dibuat 🎀</p>
+      <button class="btn btn-primary" id="afterCandlesBtn">Satu hal lagi...</button>
+    </div>
+  </section>
+
+  <!-- ================= SCENE 5: POTONG KUE ================= -->
+  <section class="scene" id="scene-cut">
+    <div class="scene-content">
+      <p class="scene-hint">Sekarang waktunya potong kuenya! 🎂</p>
+      <p class="scene-subhint" id="cutSubhint">Geser pisaunya dari atas ke bawah kue</p>
+
+      <div class="cut-cake-wrap" id="cutCakeWrap">
+        <svg class="knife-svg" id="knifeSvg" viewBox="0 0 40 90" xmlns="http://www.w3.org/2000/svg">
+          <rect x="16" y="40" width="8" height="46" rx="4" fill="#e8b6c9"/>
+          <path d="M4 6 L36 6 L30 40 L10 40 Z" fill="#f4f7fb" stroke="#d7e0ea" stroke-width="1.5"/>
+        </svg>
+
+        <svg class="cut-cake-svg" id="cutCakeSvg" viewBox="0 0 320 260" xmlns="http://www.w3.org/2000/svg">
+          <g class="cake-left">
+            <clipPath id="clipLeft"><rect x="0" y="80" width="160" height="170"/></clipPath>
+            <g clip-path="url(#clipLeft)">
+              <rect x="45" y="144" width="230" height="70" rx="14" fill="#ffb6d0"/>
+              <rect x="45" y="144" width="230" height="16" rx="8" fill="#ffdcea"/>
+              <rect x="30" y="214" width="260" height="34" rx="14" fill="#ff9dc0"/>
+              <rect x="60" y="94" width="200" height="50" rx="10" fill="#ffd9e6"/>
+              <rect x="60" y="94" width="200" height="14" rx="7" fill="#fff0f6"/>
+              <circle cx="80" cy="120" r="5" fill="#fff0f6"/>
+              <circle cx="130" cy="170" r="5" fill="#fff0f6"/>
+            </g>
+          </g>
+          <g class="cake-right">
+            <clipPath id="clipRight"><rect x="160" y="80" width="160" height="170"/></clipPath>
+            <g clip-path="url(#clipRight)">
+              <rect x="45" y="144" width="230" height="70" rx="14" fill="#ffb6d0"/>
+              <rect x="45" y="144" width="230" height="16" rx="8" fill="#ffdcea"/>
+              <rect x="30" y="214" width="260" height="34" rx="14" fill="#ff9dc0"/>
+              <rect x="60" y="94" width="200" height="50" rx="10" fill="#ffd9e6"/>
+              <rect x="60" y="94" width="200" height="14" rx="7" fill="#fff0f6"/>
+              <circle cx="190" cy="120" r="5" fill="#fff0f6"/>
+              <circle cx="230" cy="180" r="5" fill="#fff0f6"/>
+              <circle cx="160" cy="190" r="5" fill="#fff0f6"/>
+            </g>
+          </g>
+          <line class="cut-line" id="cutLine" x1="160" y1="80" x2="160" y2="80" stroke="#fff" stroke-width="3" stroke-dasharray="6 6"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SCENE 6: CELEBRATION ================= -->
+  <section class="scene" id="scene-celebration">
+    <canvas id="confettiCanvas"></canvas>
+    <div class="scene-content">
+      <div class="celebration-cake" aria-hidden="true">🎂✨</div>
+      <h2 class="celebration-text">HAPPY BIRTHDAY! <span>🎉🎂🎀</span></h2>
+      <button class="btn btn-primary" id="toFlowersBtn">Lanjutkan →</button>
+    </div>
+  </section>
+
+  <!-- ================= SCENE 7: BUNGA MEKAR ================= -->
+  <section class="scene" id="scene-flowers">
+    <div class="garden-sky" aria-hidden="true"></div>
+    <div class="scene-content">
+      <p class="scene-hint garden-hint">Bunga-bunga kecil buat hari spesialmu 🌸</p>
+      <div class="garden" id="garden">
+        <!-- bunga akan dirender via JS + terdapat fallback statis -->
+      </div>
+      <button class="btn btn-primary garden-btn" id="toMessageBtn">Lihat pesan terakhir →</button>
+    </div>
+  </section>
+
+  <!-- ================= SCENE 8: PESAN TERAKHIR ================= -->
+  <section class="scene" id="scene-message">
+    <div class="scene-decor" aria-hidden="true">
+      <span class="deco heart">♡</span>
+      <span class="deco sparkle">✧</span>
+      <span class="deco star star2">✦</span>
+    </div>
+    <div class="scene-content message-content">
+      <div class="final-message" id="finalMessage">
+        <p>Selamat ulang tahun! 🎉</p>
+        <p>Gak kerasa udah nambah umur aja wkwkwk. Semoga di umur yang baru ini banyak hal baik yang dateng ke kamu.</p>
+        <p>makasih juga lu udah mau temenin gua mian.</p>
+        <p>Semoga juga tahun ini lebih banyak bahagianya daripada sedihnya, lebih banyak cerita serunya, dan tentunya lebih banyak hal baik yang dateng.</p>
+        <p>moga hari ini jadi hari yang menyenangkan buat kamu.</p>
+        <p>Pokoknya nikmatin hari ini ya, karena hari ini kan hari kamu. Happy birthday! 🎂</p>
+      </div>
+      <h2 class="final-name" id="finalName">Happy Birthday, loopye 🎀</h2>
+      <p class="made-with">semamat ulang tahun🥳</p>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
